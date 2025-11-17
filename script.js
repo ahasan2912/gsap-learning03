@@ -22,3 +22,36 @@ gsap.from("h1 span", {
     opacity: 0,
     stagger: 0.2,
 })
+
+/* ------------------------------------------------------- */
+window.addEventListener("wheel", (xyz) => {
+    if (xyz.deltaY > 0) {
+        // console.log("Scroll Down");
+        gsap.to(".marque", {
+            transform: 'translateX(-200%)',
+            delay: 1,
+            duration: 4,
+            repeat: -1,
+            ease: "none"
+        })
+
+        gsap.to(".marque img", {
+            rotate: 180,
+        })
+
+    } else {
+        // console.log("Scroll Up");
+        gsap.to(".marque", {
+            transform: 'translateX(0%)',
+            delay: 1,
+            duration: 4,
+            repeat: -1,
+            ease: "none"
+        })
+
+        gsap.to(".marque img", {
+            rotate: 0,
+        })
+    }
+})
+
